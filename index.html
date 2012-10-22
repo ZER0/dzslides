@@ -23,7 +23,6 @@
       </p>
     </details>
 </section>
-
 <section>
     <hgroup>
       <h2>
@@ -430,8 +429,8 @@
     background-color: black;
   }
   figcaption {
-    margin: 70px;
     font-size: 50px;
+    padding: 0 10px;
   }
 
   footer {
@@ -486,12 +485,24 @@
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0; }
 
+  .fragment { display: none; }
+
+  .animation { position: relative; }
+  .animation > img { position: absolute; }
+
+  /* The current item */
+  img.fragment[aria-selected] { display: inline-block; }
+
+  /* The items to-be-selected */
+  .incremental > *[aria-selected] ~ * { opacity: 0; }
+
   /* The progressbar, at the bottom of the slides, show the global
      progress of the presentation. */
   #progress-bar {
     height: 2px;
     background: #AAA;
   }
+
 </style>
 
 <!-- {{{{ dzslides core
@@ -826,7 +837,7 @@
     if (cursor.length == 2) {
       newidx = ~~cursor[1].split(".")[0];
       newstep = ~~cursor[1].split(".")[1];
-      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *, .fragment').length) {
         newstep = 0;
         newidx++;
       }
@@ -849,7 +860,7 @@
     }
     if (this.step == 0) {
       this.setCursor(this.idx - 1,
-                     this.slides[this.idx - 2].$$('.incremental > *').length);
+                     this.slides[this.idx - 2].$$('.incremental > *, .fragment').length);
     } else {
       this.setCursor(this.idx, this.step - 1);
     }
@@ -857,10 +868,10 @@
 
   Dz.forward = function() {
     if (this.idx >= this.slides.length &&
-        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *, .fragment').length) {
         return;
     }
-    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *, .fragment').length) {
       this.setCursor(this.idx + 1, 0);
     } else {
       this.setCursor(this.idx, this.step + 1);
@@ -873,7 +884,7 @@
 
   Dz.goEnd = function() {
     var lastIdx = this.slides.length;
-    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *, .fragment').length;
     this.setCursor(lastIdx, lastStep);
   }
 
@@ -911,18 +922,26 @@
 
   Dz.setIncremental = function(aStep) {
     this.step = aStep;
-    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected], .fragment[aria-selected]');
     if (old) {
       old.removeAttribute('aria-selected');
     }
-    var incrementals = $$('.incremental');
+    var incrementals = Array.prototype.slice.call($$('.incremental'), 0);
+    $$.forEach($$('.fragment'), function(aNode) {
+      var parentNode = aNode.parentNode;
+      if (incrementals.indexOf(parentNode) === -1)
+        incrementals.push(parentNode);
+    });
+
     if (this.step <= 0) {
       $$.forEach(incrementals, function(aNode) {
         aNode.removeAttribute('active');
       });
       return;
     }
-    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+
+
+    var next = this.slides[this.idx - 1].$$('.incremental > *, .fragment')[this.step - 1];
     if (next) {
       next.setAttribute('aria-selected', true);
       next.parentNode.setAttribute('active', true);
@@ -954,7 +973,7 @@
     var slide = $("section:nth-of-type("+ aIdx +")");
     if (!slide)
       return;
-    var steps = slide.$$('.incremental > *').length + 1,
+    var steps = slide.$$('.incremental > *, .fragment').length + 1,
         slideSize = 100 / (this.slides.length - 1),
         stepSize = slideSize / steps;
     this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
