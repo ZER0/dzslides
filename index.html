@@ -2,7 +2,7 @@
 
 <meta charset="utf-8">
 
-<title>Hack the Web</title>
+<title>Feel the force bend the web</title>
 
 <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 
@@ -11,7 +11,7 @@
     <h5>Add-on</h5>
     <h5>SDK</h5>
 
-    <h1>Hack the Web!</h1>
+    <h1>Feel the force bend the web</h1>
   </div>
 <!--
     <h1 style="margin-top:110px">Hack the <em>web</em>!</h1>
@@ -19,75 +19,72 @@
     <div id="logo"></div>
 -->
     <footer>
-      Matteo Ferretti<br />
       Erik Vold<br />
+      Matteo Ferretti<br />
       <em>MozCamp Asia</em>, <time datetime="2012-11-15">Nov 15<sup>th</sup>, 2012
     </footer>
 
     <details>
       <p>
-        Hi, I'm Matteo Ferretti, I'm a Mozilla Developer and I'm here today to
-        talk about how to hack the web using the Add-on SDK.
+        Hi, we're working for Mozilla [in the Add-on SDK] and we're here to tell
+        to you why add-ons are important.
       </p>
     </details>
 </section>
 
 <section>
     <hgroup>
-      <h2>
-        it's not hacking,<br/>
-        it's 'Personalization'
-      </h2>
-      <h4>
-        ...although hacking sounds cooler.
-      </h4>
+      <em style="display:block">A long time ago, in a city far far away...</em>
+      <em style="width: 100%; text-align: right; padding-top: 1em" class="fragment">... The Web</em>
     </hgroup>
 
     <details>
       <p>
-        To be fair, it's not exactly "hacking", it's more about "personalization".
+        A long time time ago, in a city far far away... The Web.<br />
+        The web is an energy field of information created by all living things.
+        It surrounds us and penetrate us; it binds the droids and humans
+        together.
       </p>
     </details>
 </section>
 
 <section>
   <hgroup style="margin-top: 160px">
-    <h4>Simple, powerful</h4>
-   <h2>'personalization'<br/>is a key feature</h2>
-   <h4>of the Add-on SDK</h2>
+    [Mozilla] [Firefox]
   </hgroup>
 
   <details>
     <p>
-      Personalizing web sites has a long and glorious history: Bookmarklets,
-      Greasemonkey... Personalize the web experience was important, and it is
-      important, that's why Add-on SDK was designed from the start with that in mind.
+      In order to bend the web to the light side Mozilla creates Firefox.
     </p>
     <p>
-      By the way, is there anyone that already used Add-on SDK?
+      Firefox was the first extendable browser, which gave the users the power
+      to bend the web to their will.
     </p>
   </details>
 </section>
 
 <section>
-  <h3>A <em>new way</em> to develop Add-ons</h3>
+  <h3>Early Jedi introduced <em>powers...</em></h3>
 
   <ul class="incremental">
-    <li>Command-line tool for testing, running, packaging
-    <li>Test framework
-    <li>Modular development via CommonJS
-    <li>A growing collection of community-contributed modules
+    <li>AdBlock Plus
+    <li>Firebug
+    <li>GreaseMonkey
   </ul>
 
   <details>
     <p>
-      For the ones that doesn't know, the Add-on SDK is the new way to create
-      add-ons for Firefox. It has command line tool for testing, running and packaging;
-      a test framework; a modular development via CommonJS, and growing collection
-      of community-contributed modules.
-    </p>
-    <p>
-      And...
+      Using Firefox early jedi introduced powers.
+      <br/>
+      Wladimir (Vlad-a-mer) Palant created AdBlock Plus. AdBlock Plus blocks
+      ads from the dark side.
+      <br/>
+      Joe Hewitt created Firebug. Firebug allowed users to inspect the force
+      of the web and understand how it worked.
+      <br/>
+      Aaron Broodman used the force to create Greasemonkey. Greasemonkey allowed
+      users to perform jedi mind tricks on web site with user scripts.
     </p>
   </details>
 </section>
@@ -451,7 +448,7 @@
     display: inline;
   }
 
-  .incremental li:before {
+  ul.incremental li:before {
     content: "\2714";
     opacity: 1;
     margin-left: -35px;
@@ -464,7 +461,7 @@
   /* The current item */
 
   /* The items to-be-selected */
-  .incremental > *[aria-selected] ~ li:before { opacity: 0; }
+  ul.incremental > *[aria-selected] ~ li:before { opacity: 0; }
 
   p {
     margin: 75px;
@@ -542,13 +539,24 @@
   /* After */
   section[aria-selected] ~ section { top: +150%; }
 
-  /* Incremental elements */
+/* Incremental elements */
 
   /* By default, visible */
-  .incremental > * { opacity: 0.3; }
+  .incremental > * { opacity: 1; }
 
   /* The current item */
   .incremental > *[aria-selected] { opacity: 1; }
+
+  /* The items to-be-selected */
+  .incremental > *[aria-selected] ~ * { opacity: 0; }
+
+  .fragment { display: none; }
+
+  .animation { position: relative; }
+  .animation > img { position: absolute; }
+
+  /* The current item */
+  .fragment[aria-selected] { display: inline-block; }
 
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0; }
@@ -893,7 +901,7 @@
     if (cursor.length == 2) {
       newidx = ~~cursor[1].split(".")[0];
       newstep = ~~cursor[1].split(".")[1];
-      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *, .fragment').length) {
         newstep = 0;
         newidx++;
       }
@@ -916,7 +924,7 @@
     }
     if (this.step == 0) {
       this.setCursor(this.idx - 1,
-                     this.slides[this.idx - 2].$$('.incremental > *').length);
+                     this.slides[this.idx - 2].$$('.incremental > *, .fragment').length);
     } else {
       this.setCursor(this.idx, this.step - 1);
     }
@@ -924,10 +932,10 @@
 
   Dz.forward = function() {
     if (this.idx >= this.slides.length &&
-        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *, .fragment').length) {
         return;
     }
-    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *, .fragment').length) {
       this.setCursor(this.idx + 1, 0);
     } else {
       this.setCursor(this.idx, this.step + 1);
@@ -940,7 +948,7 @@
 
   Dz.goEnd = function() {
     var lastIdx = this.slides.length;
-    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *, .fragment').length;
     this.setCursor(lastIdx, lastStep);
   }
 
@@ -978,18 +986,26 @@
 
   Dz.setIncremental = function(aStep) {
     this.step = aStep;
-    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected], .fragment[aria-selected]');
     if (old) {
       old.removeAttribute('aria-selected');
     }
-    var incrementals = $$('.incremental');
+    var incrementals = Array.prototype.slice.call($$('.incremental'), 0);
+    $$.forEach($$('.fragment'), function(aNode) {
+      var parentNode = aNode.parentNode;
+      if (incrementals.indexOf(parentNode) === -1)
+        incrementals.push(parentNode);
+    });
+
     if (this.step <= 0) {
       $$.forEach(incrementals, function(aNode) {
         aNode.removeAttribute('active');
       });
       return;
     }
-    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+
+
+    var next = this.slides[this.idx - 1].$$('.incremental > *, .fragment')[this.step - 1];
     if (next) {
       next.setAttribute('aria-selected', true);
       next.parentNode.setAttribute('active', true);
@@ -1021,7 +1037,7 @@
     var slide = $("section:nth-of-type("+ aIdx +")");
     if (!slide)
       return;
-    var steps = slide.$$('.incremental > *').length + 1,
+    var steps = slide.$$('.incremental > *, .fragment').length + 1,
         slideSize = 100 / (this.slides.length - 1),
         stepSize = slideSize / steps;
     this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
