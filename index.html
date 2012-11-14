@@ -7,13 +7,21 @@
 <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 
 <section>
+  <div id="title">
+    <h5>Add-on</h5>
+    <h5>SDK</h5>
+
+    <h1>Hack the Web!</h1>
+  </div>
+<!--
     <h1 style="margin-top:110px">Hack the <em>web</em>!</h1>
     <h4 style="font-size:30px; color:#fff; margin-top: -24px">with the Add-on SDK</h4>
     <div id="logo"></div>
-
+-->
     <footer>
-      Matteo Ferretti<br/>
-      <em>jsday</em>, <time datetime="2012-05-16">May 16<sup>th</sup>, 2012
+      Matteo Ferretti<br />
+      Erik Vold<br />
+      <em>MozCamp Asia</em>, <time datetime="2012-11-15">Nov 15<sup>th</sup>, 2012
     </footer>
 
     <details>
@@ -27,7 +35,7 @@
 <section>
     <hgroup>
       <h2>
-        It's not hacking,<br/>
+        it's not hacking,<br/>
         it's 'Personalization'
       </h2>
       <h4>
@@ -235,7 +243,7 @@
 </section>
 <section>
   <hgroup>
-    <h2>Questions?</h2>
+    <h2>questions?</h2>
   </hgroup>
 </section>
 
@@ -259,8 +267,15 @@
   */
 
   @font-face {
-    font-family: 'BebasNeueRegular';
-    src: url('./assets/BebasNeue-webfont.woff') format('woff');
+    font-family: 'jedi';
+    src: url('./assets/Starjedi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'FranklinGothicRegular';
+    src: url('./assets/franklingothic-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -272,7 +287,33 @@
     font-style: normal;
   }
 
+  #title {
+    position: absolute;
+    border: 10px solid #FCDF2B;
+    width: 100%;
+    display: block;
+    top: 100px;
+    border-radius: 12px;
+    color: #FCDF2B;
+    font-family: 'jedi';
+  }
+
+  #title h1 {
+    z-index: 10;
+    position: relative;
+    margin: 20px 0 30px 0;
+  }
+
+  #title h1, h2 {
+    text-shadow: 0 1px 0pt #f39500,
+      0 2px 0 #8d5600,
+      0 3px 1px #5f3a00,
+      0 10px 8px rgba(0, 0, 0, 0.3);
+  }
+
+
   #logo {
+    display: none;
     width: 345px;
     height: 329px;
     background: url(assets/jetpack.png) no-repeat;
@@ -281,8 +322,21 @@
     margin-left: -20%;
     position: absolute;
     bottom: 41px;
-    clip: rect(0 345px 251px 0);
     z-index: -100;
+  }
+
+  #title h5:first-of-type {
+    position: absolute;
+    top: -31px;
+    left: 20px;
+    background: #000;
+  }
+
+  #title h5:last-of-type {
+    position: absolute;
+    bottom: -24px;
+    right: 20px;
+    background: #000;
   }
 
   /*
@@ -295,8 +349,7 @@
   html {
     height: 100%;
     width: 100%;
-    background: -webkit-radial-gradient(center, ellipse cover,   #353a40 0%, #0c0d0e 100%);
-    background: -moz-radial-gradient(center, ellipse cover,  #353a40 0%, #0c0d0e 100%);
+    background: url(./assets/background.png);
   }
 
   html, .view body {
@@ -306,12 +359,12 @@
   body, .view section {
     color: white;
     text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-    border-radius: 12px
+    border-radius: 12px;
   }
 
   /* A section is a slide. It's size is 800x600, and this will never change */
   section, .view head > title {
-    font-family: 'BebasNeueRegular', arial, serif;
+    font-family: FranklinGothicRegular, arial, serif;
     font-size: 30px;
   }
 
@@ -336,6 +389,7 @@
   }
 
   h1, h2 {
+    font-family: 'jedi';
     text-align: center;
     font-size: 80px;
     font-weight: normal;
@@ -343,16 +397,23 @@
       0 2px 0 rgb(128, 128, 128),
       0 3px 1px rgb(164, 164, 164),
       0 10px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1em;
+  }
+
+  h5 {
+    font-weight: normal;
+    font-size: 40px;
+    text-shadow: none;
   }
 
   a, em, h4, li:before {
-    color: #ff0038;
+    color: #4BD5EE;
     font-style: normal;
   }
 
   a {
     text-decoration: none;
-    border-bottom: 2px dashed #ff0038 ;
+    border-bottom: 2px dashed #4BD5EE;
   }
 
   h1 em, h2 em {
@@ -435,14 +496,20 @@
   }
 
   footer {
+    color: #4BD5EE;
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 23px;
     text-align: right;
-    box-shadow: 0px -15px 15px -15px black;
+    abox-shadow: 0px -15px 15px -15px black;
     font-size: 28px;
+    font-family: 'FranklinGothicRegular';
     z-index: 9;
+  }
+
+  footer em {
+    color: white;
   }
 
   /* Transition effect */
@@ -451,10 +518,10 @@
      https://developer.mozilla.org/en/CSS/CSS_transitions
      How to use CSS3 Transitions: */
   section {
-    -moz-transition: left 400ms linear 0s;
-    -webkit-transition: left 400ms linear 0s;
-    -ms-transition: left 400ms linear 0s;
-    transition: left 400ms linear 0s;
+    -moz-transition: top 400ms linear 0s;
+    -webkit-transition: top 400ms linear 0s;
+    -ms-transition: top 400ms linear 0s;
+    transition: top 400ms linear 0s;
   }
 
   .view section {
@@ -469,11 +536,11 @@
   }
 
   /* Before */
-  section { left: -150%; }
+  section { top: -150%; }
   /* Now */
-  section[aria-selected] { left: 0; }
+  section[aria-selected] { top: 0; }
   /* After */
-  section[aria-selected] ~ section { left: +150%; }
+  section[aria-selected] ~ section { top: +150%; }
 
   /* Incremental elements */
 
