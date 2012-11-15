@@ -351,7 +351,7 @@
   </div>
   <details>
     <p>
-      ## why mobile is important as platform
+      Just a quick overview about Mobile. So, why Mobile is so important?
     </p>
   </details>
 </section>
@@ -360,27 +360,35 @@
   <blockquote>
     By 2014, mobile internet should take over desktop internet usage.
   </blockquote>
-</section>
 
-<section>
-  <figure>
-    <img src="./assets/mobilegraph.png" />
-  </figure>
+  <img src="./assets/mobilegraph.png"
+    width = "430" style="display: block; margin: 0 auto"
+  />
 
   <details>
     <p>
-      Mobile is a constantly growing area, it's becoming more and more important. Several companies, are starting to use the "Mobile first" philosophy.
+      Mobile is a constantly growing area, it's becoming more and more important.
+      That's why Add-on SDK has an experimental support for Mobile. Here I'm
+      showing a couple of example related to mobile and SDK.
     </p>
-  </details>
-
 </section>
 
 <section>
   <hgroup>
-    <h2>Phony</h2>
-    <h4>or ...</h4>
+    <h2>Firefox Mobile</h2>
   </hgroup>
 
+  <details>
+    <p>
+      Firefox Mobile is an Android browser. It shares the same engine of Firefox
+      Desktop, that is Gecko, but has several differences too. Add-on SDK takes
+      care of these differences for you: if you write an extensions using our
+      APIs, it will works as is on both Firefox Desktop and Mobile.
+    </p>
+    <p>
+      You can also write add-ons specifically for Mobile, like Phony...
+    </p>
+  </details>
 </section>
 
 <section>
@@ -390,25 +398,59 @@
 
   <img src="./assets/not_the_droids_youre_looking_for.png"
     style="margin: 0 auto; display:block;" />
-</section>
-
-
-<!--
-<section>
-  <h3>Serious examples</h3>
-
-  <ul>
-    <li><a href="https://browserid.org/" target="_blank">BrowserID</a></li>
-    <li><a href="https://github.com/mozilla/fx-share-addon"target="_blank">Firefox Share</a> </li>
-    <li><a href="https://agilebits.com/extensions/mac/index.html" target="_blank">1Password</a></li>
-    <li>over <a href="https://addons.mozilla.org/en-US/firefox/tag/jetpack?appver=10.0" target="_blank">400 more</a> on addons.mozilla.org</li>
-  </ul>
 
   <details>
-    Here there more complex add-ons written with the SDK.
+    <p>
+      Phony is an add-on that disguise your Firefox Mobile as another browser.
+      It's useful especially when a certain site provide a webkit-only version of
+      its mobile site.
+    </p>
+    <p>
+      If SDK doesn't provides some special functionality for Mobile, you can
+      also create your own module, as was mentioned before. For example, I created
+      a geolocation module.
+    </p>
   </details>
 </section>
--->
+
+<section>
+  <hgroup>
+    <h2>Firefox OS</h2>
+  </hgroup>
+
+  <details>
+    <p>
+      Firefox Mobile is not the only mobile product in Mozilla. Firefox OS, codename B2G (Boot 2 Gecko) is the new Mozilla Operating System for Mobile platform. As the code name says, it's based on Gecko too.
+      Add-on SDK was used to create ...
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup style="margin: 0">
+    <h2>R2D2B2G</h2>
+  </hgroup>
+
+  <div style="margin: 80px auto 0 auto; width: 700px" class="incremental">
+    <img src="./assets/R2D2-icon.png" />
+    <img src="./assets/plus.png" style="margin-right: 40px"/>
+    <img src="./assets/b2g-logo-256.png" />
+  </div>
+
+  <details>
+    <p>
+      What is R2D2B2G? You basically take R2D2, you add a cup of of B2G, and you
+      get the "Firefox OS Simulator", codename R2D2B2G. The Firefox OS Simulator
+      was made using Add-on SDK.
+    </p>
+    <p>
+      Also, because Firefox OS is based on Gecko, ideally you could use add-ons
+      to extends the application you have installed on your mobile device. In
+      this sense, it will became a sort of universal plug-in system. I'm
+      really looking forward to have it!
+  </details>
+</section>
+
 <section>
   <hgroup>
     <h2>questions?</h2>
@@ -552,6 +594,7 @@
 
   h1, h2 {
     font-family: 'jedi';
+    text-transform: lowercase;
     text-align: center;
     font-size: 80px;
     font-weight: normal;
@@ -643,9 +686,9 @@
   blockquote {
     background-color: rgba(0, 0, 93, 0.2);
     color: #4BD5EE;
-    font-size: 50px;
-    padding: 60px;
-    margin: 20px;
+    font-size: 45px;
+    padding: 50px;
+    margin: 10px;
     font-weight: block;
   }
 
@@ -653,8 +696,8 @@
     content: open-quote;
     font-size: 300px;
     position: absolute;
-    top: -10px;
-    left: 20px;
+    top: -30px;
+    left: 10px;
     z-index: -1;
     opacity: 0.3
   }
