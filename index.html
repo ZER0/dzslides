@@ -13,35 +13,41 @@
 
     <h1>Feel the force bend the web</h1>
   </div>
-<!--
-    <h1 style="margin-top:110px">Hack the <em>web</em>!</h1>
-    <h4 style="font-size:30px; color:#fff; margin-top: -24px">with the Add-on SDK</h4>
-    <div id="logo"></div>
--->
-    <footer>
-      Erik Vold<br />
-      Matteo Ferretti<br />
-      <em>MozCamp Asia</em>, <time datetime="2012-11-15">Nov 15<sup>th</sup>, 2012
-    </footer>
+
+  <footer>
+    Erik Vold<br />
+    Matteo Ferretti<br />
+    <em>MozCamp Asia</em>, <time datetime="2012-11-15">Nov 15<sup>th</sup>, 2012
+  </footer>
 
     <details>
       <p>
         Hi, we're working for Mozilla [in the Add-on SDK] and we're here to tell
-        to you why add-ons are important.
+        to you why add-ons are important.<br/><br/>
+        Who has made an add-on before? Who knows JavaScript?
+
+        <ul>
+          <li>Add-on History
+          <li>Why use the force?
+          <li>Dark side of the force
+          <li>Power of the Add-on SDK
+          <li>Sharing new powers
+          <li>Mobile
+        </ul>
       </p>
     </details>
 </section>
 
 <section>
-    <hgroup>
-      <em style="display:block">A long time ago, in a city far far away...</em>
+    <hgroup style="padding: 50px;">
+      <em style="display:block">A long time ago, in a valley far far away...</em>
       <em style="width: 100%; text-align: right; padding-top: 1em" class="fragment">... The Web</em>
     </hgroup>
 
     <details>
       <p>
-        A long time time ago, in a city far far away... The Web.<br />
         The web is an energy field of information created by all living things.
+        It's ubiquitous.
         It surrounds us and penetrate us; it binds the droids and humans
         together.
       </p>
@@ -49,13 +55,14 @@
 </section>
 
 <section>
-  <hgroup style="margin-top: 160px">
-    [Mozilla] [Firefox]
+  <hgroup style="margin-top: 150px">
+    <img style="margin: 0 auto 1em auto; display:block" src="assets/mozilla_logo_red.png"/>
+    <img style="margin: 0 auto" class="fragment" src="assets/firefox_logo.png"/>
   </hgroup>
 
   <details>
     <p>
-      In order to bend the web to the light side Mozilla creates Firefox.
+      In order to bend the web to the light side Mozilla created Firefox.
     </p>
     <p>
       Firefox was the first extendable browser, which gave the users the power
@@ -65,7 +72,61 @@
 </section>
 
 <section>
-  <h3>Early Jedi introduced <em>powers...</em></h3>
+  <h3>Why bend the web?</h3>
+
+  <ul class="incremental">
+    <li>Improve your experience
+    <li>Gain new experiences
+    <li>Change your own behavior
+  </ul>
+
+  <details>
+    <p>
+      Improve your experience
+      <br/>
+      Gain new experiences
+      <br/>
+      Change your behavior - Knowing which sites track you, may teach you to avoid them
+    </p>
+  </details>
+</section>
+
+<section>
+  <blockquote>
+    A Jedi uses the Force for knowledge and defense. Never for attack.
+    <em>Yoda</em>
+  </blockquote>
+
+  <details>
+    The Force however can be used for light and dark, so there is a dark side to the web as well.
+  </details>
+</section>
+
+<section>
+  <h3>Fighting the dark side</h3>
+
+  <ul class="incremental">
+    <li>Ads
+    <li>Analytics
+    <li>Controlled content
+    <li>Bugs
+  </ul>
+
+  <details>
+    <p>
+      Ads - selling you things you never cared about
+      <br/>
+      Analytics - tracking what you do and care about
+      <br/>
+      Walled Gardens - apps for iOS, news/content
+     <br/>
+     Bugs
+    </p>
+  </details>
+</section>
+
+<section>
+  <h3>Early Jedi introduced powers...</h3>
 
   <ul class="incremental">
     <li>AdBlock Plus
@@ -77,13 +138,12 @@
     <p>
       Using Firefox early jedi introduced powers.
       <br/>
-      Wladimir (Vlad-a-mer) Palant created AdBlock Plus. AdBlock Plus blocks
-      ads from the dark side.
+      AdBlock Plus blocks ads from the dark side.
       <br/>
-      Joe Hewitt created Firebug. Firebug allowed users to inspect the force
+      Firebug allowed users to inspect the force
       of the web and understand how it worked.
       <br/>
-      Aaron Broodman used the force to create Greasemonkey. Greasemonkey allowed
+      Greasemonkey allowed
       users to perform jedi mind tricks on web site with user scripts.
     </p>
   </details>
@@ -91,124 +151,249 @@
 
 <section>
   <hgroup>
-    <h4>you can</h4>
-    <h2>Reuse your skills</h2>
-    <h4>No need to learn new things</h4>
+    <h4>bending web pages with</h4>
+    <h2>userscripts</h2>
   </hgroup>
 
   <details>
-    <p>You can reuse HTML5, CSS and JavaScript to build your add-on.</p>
-    <p>So, how we can use the Add-on SDK to personalize the web?</p>
+    <p>Gave young jedi an easy way to bend specific web sites to their will.</p>
   </details>
 </section>
 
 <section>
-  <hgroup>
-    <h2>Page-Mod</h2>
-    <h4>...or 'Styling the web'</h4>
-  </hgroup>
-
-  <details>
-    <p>Page-Mod. This module is designed to easily modify a web page.</p>
-    <p>
-      Page-Mods are applied to all pages that match a url pattern: you can match a
-      specific URL, domain, protocol, and even use a Regular Expression.
-    </p>
-    <p style="display:none">
-      If a document matches the pattern, your add-on will be applied. It doesn't
-      matter if the page is loaded in a tab, popup, or a frame.
-    </p>
-  </details>
-</section>
-
-<section>
-  <hgroup>
-    <h2>Content Style</h2>
-    <h4>and</h4>
-    <h2>Content Script</h2>
-  </hgroup>
-
-  <details>
-    <p>
-      Page-mods can modify the appearance of pages using content style, and behavior
-      using content script.
-    </p>
-    <p>
-      Content Style are quite simple: you can apply stylesheets that can overrides
-      the CSS of the page.
-    </p>
-    <p>
-      Content Script are more interesting:
-    </p>
-  </details>
-</section>
-
-<section>
-  <h3>Content Scripts</h3>
+  <h3>Examples</h3>
 
   <ul class="incremental">
-    <li>Are attached to the HTML Document
-    <li>Can interact with the DOM
-    <li>Are isolated
-    <li>Are protected from page's script
+    <li>Add results to Google
+    <li>Mix results from Yahoo with Google
+    <li>Compare prices
+    <li>Remove unwanted information
   </ul>
 
   <details>
-    They're atteched to the HTML document, but they're isolated.
-    It means, they can interact with the Document's DOM, but they're protected
-    from web page's JavaScript code.
-  </details>
-</section>
-
-<section>
-  <hgroup>
-    <h4>
-      Simplest possible example
-    </h4>
-    <h2>
-      Open in C9
-    </h2>
-  </hgroup>
-
-  <details>
     <p>
-      Let's see a simple page-mod.
-    </p>
-    <p>
-      https://github.com/c9/open-in-c9-extension
+
     </p>
   </details>
 </section>
 
 <section>
-  <h3>But wait, there's <em>more</em>!</h3>
-
-  <ul class="incremental">
-    <li>Integrate with the Firefox UI: panels, widgets, preferences, context-menu, tabs
-    <li>Crossdomain requests, notifications, clipboard
-    <li>Access to the entire Mozilla Platform through XPCOM &amp; jsm
-    <li>l10n for HTML content
-  </ul>
+  <hgroup>
+    <h4>Jetpack became the</h4>
+    <h2>Add-on SDK</h2>
+    <h4>if you can make a web page,<br/>you can make an add-on</h4>
+  </hgroup>
 
   <details>
-    <p>Add-on SDK is not only Page-Mod</p>
-    <p>(...)</p>
-    <p>And Last but not least...</p>
+    <p>
+      The problem with making traditional extensions is that it was hard, requiring
+      knowledge of XUL, XBL, and craziness. <b>not restartless</b>
+    </p>
+    <p>
+    The Add-on SDK was designed so that <b>web developers could reuse their
+    knowledge of web technologies like JavaScript, HTML, and CSS</b>
+    </p>
   </details>
 </section>
 
 <section>
   <hgroup>
-    <h2>Mobile Support</h2>
+    <h2>Built-in Powers</h2>
+    <h4>Strong they are</h4>
   </hgroup>
 
   <details>
-    If your using Add-on SDK to develop a Firefox Add-on it will runs on both
-    Desktop and Mobile. The support is still experimental, so not all modules
-    are compatible, but Page-Mods for example works perfectly.
+    <p>
+
+    </p>
   </details>
 </section>
 
+<section>
+  <hgroup>
+    <h2>Page-Mods</h2>
+    <h4>Better than UserScripts they are</h4>
+  </hgroup>
+
+  <details>
+    <p>
+      Fewer differences from regular DOM manipulation than with UserScripts.
+      Clearer security boundaries, harder to make a security leak (think xhr).
+      Easier to apply content style.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Context Menu</h2>
+    <h4>Right click phasers</h4>
+  </hgroup>
+
+  <details>
+    <p>
+
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Clipboard</h2>
+    <h4>Space folding</h4>
+  </hgroup>
+
+  <details>
+    <p>
+      Allows you to move data from one piece of the web to another.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Panels</h2>
+    <h4>Lift the datas</h4>
+  </hgroup>
+
+  <details>
+    <p>
+      A panel allows you to create a panel which can lift data from anywhere
+      a bring it to you whenever you need it.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Widgets</h2>
+    <h4>Utility Droids</h4>
+  </hgroup>
+
+  <details>
+    <p>
+      Variety in function, ever present.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Simple Storage</h2>
+    <h4>Droid Memory</h4>
+  </hgroup>
+
+  <details>
+    <p>
+
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>New Power Sharing</h2>
+    <h4>Third party modules</h4>
+  </hgroup>
+
+  <details>
+    <p>
+      With the add-on sdk it is now possible for powers to be shared & reused to
+      create new powers.  We call these third part modules.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>AwesomeBar</h2>
+    <h4>Awesome it is</h4>
+  </hgroup>
+
+  <details>
+    <p>
+      With the awesome bar module it is easy to add results to the url bar when
+      the user is typing things.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Toolbar Buttons</h2>
+    <h4>Less useful than widgets, but more fun to press!</h4>
+  </hgroup>
+
+  <details>
+    <p>
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Where to find new powers</h2>
+    <h4><a href="https://github.com/mozilla/addon-sdk/wiki/Community-developed-modules">https://github.com/mozilla/addon-sdk/wiki/Community-developed-modules</a></h4>
+  </hgroup>
+
+  <details>
+    <p>
+    </p>
+  </details>
+</section>
+
+<section>
+  <div id="title">
+    <h5>Add-on</h5>
+    <h5>SDK</h5>
+
+    <h1>use the Mobile, Luke</h1>
+  </div>
+  <details>
+    <p>
+      ## why mobile is important as platform
+    </p>
+  </details>
+</section>
+
+<section>
+  <blockquote>
+    By 2014, mobile internet should take over desktop internet usage.
+  </blockquote>
+</section>
+
+<section>
+  <figure>
+    <img src="./assets/mobilegraph.png" />
+  </figure>
+
+  <details>
+    <p>
+      Mobile is a constantly growing area, it's becoming more and more important. Several companies, are starting to use the "Mobile first" philosophy.
+    </p>
+  </details>
+
+</section>
+
+<section>
+  <hgroup>
+    <h2>Phony</h2>
+    <h4>or ...</h4>
+  </hgroup>
+
+</section>
+
+<section>
+  <blockquote>
+    These Are Not The Droids You're Looking For.
+  </blockquote>
+
+  <img src="./assets/not_the_droids_youre_looking_for.png"
+    style="margin: 0 auto; display:block;" />
+</section>
+
+
+<!--
 <section>
   <h3>Serious examples</h3>
 
@@ -223,21 +408,7 @@
     Here there more complex add-ons written with the SDK.
   </details>
 </section>
-
-<section>
-  <hgroup>
-    <h1>Collusion</h1>
-    <h4>They track you</h4>
-  </hgroup>
-
-  <details>
-    <p>If you're paranoid, you were right: they track you.</p>
-    <p>
-      Collusion is an experimental add-on for Firefox and allows you to see all
-      the third parties that are tracking your movements across the Web.
-    </p>
-  </details>
-</section>
+-->
 <section>
   <hgroup>
     <h2>questions?</h2>
@@ -247,12 +418,14 @@
 <section>
   <h2>Thank you!</h2>
   <p>
-    If you have any questions feel free to grab me, or bug me on Twitter!
+    If you have any questions feel free to grab us!
     <br/>
     <a href="http://twitter.com/ZER0">@ZER0</a>
+    <br/>
+    <a href="http://twitter.com/erikvold">@erikvold</a>
   </p>
   <p>
-    We're on IRC: <em>#jetpack</em> on irc.mozilla.org
+    We're on IRC: <em>#jetpack</em> on <em>irc.mozilla.org</em>
   </p>
 </section>
 
@@ -301,14 +474,6 @@
     margin: 20px 0 30px 0;
   }
 
-  #title h1, h2 {
-    text-shadow: 0 1px 0pt #f39500,
-      0 2px 0 #8d5600,
-      0 3px 1px #5f3a00,
-      0 10px 8px rgba(0, 0, 0, 0.3);
-  }
-
-
   #logo {
     display: none;
     width: 345px;
@@ -354,7 +519,7 @@
   }
 
   body, .view section {
-    color: white;
+    color: #FCDF2B;
     text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
   }
@@ -390,11 +555,11 @@
     text-align: center;
     font-size: 80px;
     font-weight: normal;
-    text-shadow: 0 1px 0pt rgb(204, 204, 204),
-      0 2px 0 rgb(128, 128, 128),
-      0 3px 1px rgb(164, 164, 164),
-      0 10px 8px rgba(0, 0, 0, 0.3);
     line-height: 1em;
+    text-shadow: 0 1px 0pt #f39500,
+      0 2px 0 #8d5600,
+      0 3px 1px #5f3a00,
+      0 10px 8px rgba(0, 0, 0, 0.3);
   }
 
   h5 {
@@ -403,14 +568,21 @@
     text-shadow: none;
   }
 
-  a, em, h4, li:before {
+  hgroup em {
+    color: #4BD5EE
+  }
+
+  a {
     color: #4BD5EE;
+  }
+
+  em, h4, li:before {
+    color: #fff; /* #4BD5EE; */
     font-style: normal;
   }
 
   a {
     text-decoration: none;
-    border-bottom: 2px dashed #4BD5EE;
   }
 
   h1 em, h2 em {
@@ -420,11 +592,11 @@
   h4 {
     text-align: center;
     display: block;
-    font-family: MeriendaOneRegular;
+    font-family: FranklinGothicRegular;
     font-size: 33px;
     font-weight: normal;
-    font-style: italic;
     text-shadow: 0 3px rgba(0, 0, 0, 0.3);
+    margin: 20px 0 0 0;
   }
 
   h3 {
@@ -469,23 +641,45 @@
   }
 
   blockquote {
-    height: 100%;
-    background-color: black;
-    color: white;
-    font-size: 60px;
-    padding: 50px;
+    background-color: rgba(0, 0, 93, 0.2);
+    color: #4BD5EE;
+    font-size: 50px;
+    padding: 60px;
+    margin: 20px;
+    font-weight: block;
   }
+
   blockquote:before {
     content: open-quote;
+    font-size: 300px;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    z-index: -1;
+    opacity: 0.3
   }
   blockquote:after {
     content: close-quote;
+    position: absolute;
+    opacity: 0
   }
 
+  blockquote > em {
+    font-style: italic;
+    font-size: 70%;
+    color: #4BD5EE;
+    display: block;
+    text-align: right;
+  }
+
+  blockquote > em:before {
+    content: "\2014";
+    margin-right: 0.2em;
+  }
   /* Figures are displayed full-page, with the caption
      on top of the image/video */
   figure {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
   }
   figcaption {
     margin: 70px;
@@ -558,6 +752,8 @@
   /* The current item */
   .fragment[aria-selected] { display: inline-block; }
 
+  hgroup > img.fragment[aria-selected] { display: block; }
+
   /* The items to-be-selected */
   .incremental > *[aria-selected] ~ * { opacity: 0; }
 
@@ -623,6 +819,10 @@
     margin-top: 200px;
   }
 
+  hgroup > img {
+    display: block;
+  }
+
   .view section {
     pointer-events: auto;
     position: static;
@@ -654,10 +854,12 @@
   .view #progress-bar {
     display: none;
   }
+
   figure {
     width: 100%;
     height: 100%;
   }
+
   figure > * {
     position: absolute;
   }
